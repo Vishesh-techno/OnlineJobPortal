@@ -2,7 +2,9 @@
 <%@ page import="com.entity.User" %>
 <%
     User user = (User) session.getAttribute("userobj");
+    request.setAttribute("user", user); // make it available to all pages
 %>
+
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
     <a class="navbar-brand" href="#">Navbar</a>
@@ -19,12 +21,15 @@
                 <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
             </li>
 
-            <% if (user != null && "admin".equals(user.getRole())) { %>
-                <li class="nav-item">
-                    <a class="nav-link" href="add_job.jsp"><i class="fa fa-plus-circle mr-2"></i>Post Jobs</a>
-                </li>
+            <% if (user != null) { %>
                 <li class="nav-item">
                     <a class="nav-link" href="view_job.jsp"><i class="fas fa-eye mr-2"></i>View Jobs</a>
+                </li>
+            <% } %>
+
+            <% if (user != null && "admin".equals(user.getRole())) { %>
+                <li class="nav-item">
+                    <a class="nav-link" href="add_job.jsp"><i class="fas fa-plus-circle mr-2"></i>Post Jobs</a>
                 </li>
             <% } %>
         </ul>
@@ -34,6 +39,7 @@
                 <a href="Login.jsp" class="btn btn-light mr-2"><i class="fas fa-sign-in-alt mr-2"></i>Login</a>
                 <a href="SignUp.jsp" class="btn btn-light"><i class="fa-solid fa-user mr-2"></i>Sign-Up</a>
             <% } else { %>
+            <a href="admin.jsp" class="btn btn-light mr-2" style="background-color: red;">Admin</a>
                 <a href="logout" class="btn btn-light"><i class="fas fa-sign-out-alt mr-2"></i>Logout</a>
             <% } %>
         </form>
