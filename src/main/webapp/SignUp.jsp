@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,8 +20,19 @@
 							<i class="fa fa-user fa-2x" aria-hidden="true"></i>
 							<h5>Registration Page</h5>
 						</div>
+						<%
+						String msg = (String) session.getAttribute("msg");
+						if (msg != null) {
+						%>
+						<div class="alert alert-info text-center" role="alert">
+							<%=msg%>
+						</div>
+						<%
+						session.removeAttribute("msg");
+						}
+						%>
 
-						<form action="register" method="post">
+						<form action="add_user" method="post">
 							<div class="form-group">
 								<label for="name">Full Name</label> <input type="text"
 									class="form-control" id="name" name="name"

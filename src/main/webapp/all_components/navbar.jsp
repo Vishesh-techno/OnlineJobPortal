@@ -38,10 +38,25 @@
             <% if (user == null) { %>
                 <a href="Login.jsp" class="btn btn-light mr-2"><i class="fas fa-sign-in-alt mr-2"></i>Login</a>
                 <a href="SignUp.jsp" class="btn btn-light"><i class="fa-solid fa-user mr-2"></i>Sign-Up</a>
+            <% } else {
+                String role = user.getRole();
+                String name = user.getName(); // Assuming getName() returns the user’s full name
+        %>
+            <% if ("admin".equals(role)) { %>
+                <a href="admin.jsp" class="btn btn-light mr-2" style="background-color: red;">
+                    Admin
+                </a>
             <% } else { %>
-            <a href="admin.jsp" class="btn btn-light mr-2" style="background-color: red;">Admin</a>
-                <a href="logout" class="btn btn-light"><i class="fas fa-sign-out-alt mr-2"></i>Logout</a>
+                <a href="Home.jsp" class="btn btn-light mr-2" style="background-color: white;">
+                    <%= name %>
+                </a>
             <% } %>
-        </form>
+            <a href="logout" class="btn btn-light">
+                <i class="fas fa-sign-out-alt mr-2"></i>Logout
+            </a>
+        <%
+            }
+        %>
+    </form>
     </div>
 </nav>

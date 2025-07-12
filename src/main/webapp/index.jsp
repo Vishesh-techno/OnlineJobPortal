@@ -22,7 +22,7 @@
 	<%@include file="all_components/navbar.jsp"%>
 	<div class="container-fluid back-img">
 		<div class="text-center">
-			<h1 class="text-white p-4">
+			<h1 class="text-black p-4">
 				<i class="fa fa-book mr-2" aria-hidden="true"></i>Online Job Portal
 			</h1>
 		</div>
