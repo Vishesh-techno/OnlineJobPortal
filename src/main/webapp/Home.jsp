@@ -46,7 +46,7 @@
 							<div class="form-group col-md-5">
 								<select name="location"
 									class="custom-select">
-									<option selected>Choose...</option>
+									<option selected value="lo">Choose...</option>
 									<option value="Andhra Pradesh">Andhra Pradesh</option>
 									<option value="Arunachal Pradesh">Arunachal Pradesh</option>
 									<option value="Assam">Assam</option>
@@ -83,7 +83,7 @@
 							<div class="form-group col-md-5">
 								<select name="category"
 									class="custom-select">
-									<option selected>Choose...</option>
+									<option selected value="ca">Choose...</option>
 									<option value="IT">IT</option>
 									<option value="Developer">Developer</option>
 									<option value="Banking">Banking</option>
