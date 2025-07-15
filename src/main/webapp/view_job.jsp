@@ -15,6 +15,11 @@
 <%@include file="all_components/all_css.jsp"%>
 </head>
 <body style="background-color: #f0f1f2;">
+<% User u = (User) session.getAttribute("userobj");
+if (u == null) {
+        response.sendRedirect("Login.jsp");
+        return;
+    }%>
 	<%@ include file="all_components/navbar.jsp"%>
 
 	<div class="container">

@@ -7,6 +7,7 @@
 <%@ page import="com.entity.User"%>
 <%@ page import="java.sql.Connection"%>
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +16,11 @@
 <%@include file="all_components/all_css.jsp"%>
 </head>
 <body style="background-color: #f0f1f2;">
+<% User u = (User) session.getAttribute("userobj");
+if (u == null) {
+        response.sendRedirect("Login.jsp");
+        return;
+    }%>
 	<%@ include file="all_components/navbar.jsp"%>
 
 	<div class="container">
@@ -44,8 +50,7 @@
 							</div>
 
 							<div class="form-group col-md-5">
-								<select name="location"
-									class="custom-select">
+								<select name="location" class="custom-select">
 									<option selected value="lo">Choose...</option>
 									<option value="Andhra Pradesh">Andhra Pradesh</option>
 									<option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -81,8 +86,7 @@
 							</div>
 
 							<div class="form-group col-md-5">
-								<select name="category"
-									class="custom-select">
+								<select name="category" class="custom-select">
 									<option selected value="ca">Choose...</option>
 									<option value="IT">IT</option>
 									<option value="Developer">Developer</option>
@@ -152,11 +156,8 @@
 				%>
 
 			</div>
-			<!-- End col-md-12 -->
 		</div>
-		<!-- End row -->
 	</div>
-	<!-- End container -->
 
 </body>
 </html>

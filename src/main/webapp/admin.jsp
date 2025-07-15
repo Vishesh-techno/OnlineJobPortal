@@ -17,6 +17,11 @@
 </style>
 </head>
 <body>
+<% User u = (User) session.getAttribute("userobj");
+if (u == null) {
+        response.sendRedirect("Login.jsp");
+        return;
+    }%>
  
 	<%@include file="all_components/navbar.jsp"%>
 	<div class="container-fluid back-img">
