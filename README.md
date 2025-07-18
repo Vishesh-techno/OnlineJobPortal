@@ -6,7 +6,7 @@ A fully functional web-based job portal designed to simplify the hiring and job 
 
 ## 🔧 Tech Stack Used
 
-- **Frontend**: HTML, CSS, JavaScript, JSP
+- **Frontend**: HTML, CSS, JSP
 - **Backend**: Java Servlets
 - **Database**: MySQL
 - **Server**: Apache Tomcat
